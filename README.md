@@ -125,10 +125,10 @@ Generated bash
 python -m venv venv
 
 # Activate it
-# On macOS/Linux:
+On macOS/Linux:
 source venv/bin/activate
-# On Windows:
-# venv\Scripts\activate
+On Windows:
+venv\Scripts\activate
 IGNORE_WHEN_COPYING_START
 content_copy
 download
