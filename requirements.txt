@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+httpx
+duckduckgo-search
+biopython
+python-dotenv
+streamlit
+google-generativeai
+google-cloud-aiplatform # For Vertex AI integration
+anthropic # For Claude integration
+sentence-transformers
+faiss-cpu # For local vector search simulation
+numpy
+pymupdf # For PDF parsing (replaces Document AI for local demo)

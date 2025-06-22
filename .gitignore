@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+pip-freeze.txt
+instance/
+
+# Virtual environment
+# If your virtual environment folder is named 'venv' (common practice)
+venv/
+# If you use other names for your virtual environment, add them here too
+# e.g., .venv/, env/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Secrets - CRITICAL
+# This ensures your .env file with actual API keys is NOT committed
+.env
+
+# IDE and editor specific files
+.vscode/
+.idea/
+*.project
+*.pydevproject
+.project
+.settings/
+*.tmproj
+*.sublime-project
+*.sublime-workspace
+*.komodoproject/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Test outputs
+.pytest_cache/
+.tox/
+nosetests.xml
+# You might have other test output folders
+
+# Specific to this project if any other temporary or output files are generated
+# e.g., if you create ZIP files locally before submission (though the submission itself is a ZIP)
+# *.zip
