@@ -44,6 +44,8 @@ CliniSearch demonstrates a strong command of modern AI engineering principles an
 
 ---
 Detailed System Architecture & Data Flow
+![Untitled design](https://github.com/user-attachments/assets/53db4cce-1588-4e42-9df7-bcb718204ead)
+
 The diagram above provides a comprehensive overview of the Spectra AI technology stack and the flow of data from user interaction to final output. The system is divided into four logical domains: Frontend, Backend/Orchestrator, Local Tools & Services, and External APIs.
 1. Frontend (UI - Blue)
 <i class='fab fa-streamlit'></i> Streamlit App (app.py): This is the user's single point of interaction. It's responsible for rendering the web interface, managing user inputs (text queries, file uploads), and displaying the final, formatted results.
@@ -77,14 +79,6 @@ The orchestrator gathers all the retrieved context (from web, PubMed, and local 
 The orchestrator receives the synthesized answer from the LLM.
 The answer is formatted neatly (with sources and links) and displayed back to the User in the Streamlit interface.
 
-### System Workflow Diagram
-
-The diagram below illustrates the flow of data and logic within Spectra AI. It shows how a user's query is processed through retrieval from multiple sources (Web, PubMed, local vector store) and finally, synthesis by powerful LLMs.
-
-![Untitled design](https://github.com/user-attachments/assets/609768ea-0530-4756-985c-71a150dc8f6a)
-
-
-Explanation of the Workflow:
 
 User Interaction: The user interacts with the Streamlit App, either by asking a text question in the "Medical RAG Q&A" tab or by uploading an image and text prompt in the "Radiology Image Analysis" tab.
 
