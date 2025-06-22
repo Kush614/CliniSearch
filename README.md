@@ -43,7 +43,7 @@ CliniSearch demonstrates a strong command of modern AI engineering principles an
 *   **Modular Codebase:** The project is well-organized into a Streamlit frontend (`app.py`), backend API clients (`utils/api_clients.py`), RAG logic (`utils/rag_processing.py`), and tool servers (`mcp_servers/`), promoting maintainability and scalability.
 
 ---
-Detailed System Architecture & Data Flow
+## Detailed System Architecture & Data Flow
 ![Untitled design](https://github.com/user-attachments/assets/53db4cce-1588-4e42-9df7-bcb718204ead)
 
 The diagram above provides a comprehensive overview of the Spectra AI technology stack and the flow of data from user interaction to final output. The system is divided into four logical domains: Frontend, Backend/Orchestrator, Local Tools & Services, and External APIs.
