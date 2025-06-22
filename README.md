@@ -1,14 +1,7 @@
-Of course. Here is the complete and clean content for your README.md file.
-
-You can copy everything inside the code block below and paste it directly into a new file named README.md in your project's root directory.
-
 Generated markdown
 # Spectra AI: A Multimodal Medical Research & Radiology Assistant
 
-**Spectra AI** is an advanced, multimodal AI agent developed for the UCB Hackathon. It is designed to be a powerful assistant for medical professionals, particularly radiologists, by streamlining clinical research and providing AI-powered preliminary image analysis. The agent integrates multiple state-of-the-art technologies, including premium LLMs (Google Gemini), a multi-source RAG pipeline, and a user-friendly web interface built with Streamlit.
-
-
-*(Note: You can replace this link with a screenshot of your own running application for the final submission.)*
+**CliniSearch** is an advanced, multimodal AI agent developed for the UCB Hackathon. It is designed to be a powerful assistant for medical professionals, particularly radiologists, by streamlining clinical research and providing AI-powered preliminary image analysis. The agent integrates multiple state-of-the-art technologies, including premium LLMs (Google Gemini), a multi-source RAG pipeline, and a user-friendly web interface built with Streamlit.
 
 ---
 
@@ -38,7 +31,7 @@ In the fast-paced medical field, professionals face the dual challenges of infor
 
 ## 🛠️ Technical Complexity & Design
 
-Spectra AI demonstrates a strong command of modern AI engineering principles and technologies.
+CliniSearch demonstrates a strong command of modern AI engineering principles and technologies.
 
 *   **Asynchronous Architecture:** Utilizes `asyncio` and `httpx` for efficient, non-blocking calls to the backend MCP tool servers.
 *   **Advanced RAG Implementation:** The system implements a full RAG pipeline, including:
@@ -88,53 +81,7 @@ The answer is formatted neatly (with sources and links) and displayed back to th
 
 The diagram below illustrates the flow of data and logic within Spectra AI. It shows how a user's query is processed through retrieval from multiple sources (Web, PubMed, local vector store) and finally, synthesis by powerful LLMs.
 
-```mermaid
-graph TD
-    A[User] -->|1. Medical Question or Image Upload| B(Spectra AI - Streamlit App)
-
-    subgraph "Agent Core Logic (app.py)"
-        B -->|2. Query| C{RAG Orchestrator}
-        
-        C -.->|3a. Web Search Query| D[MCP Server: Web Search]
-        D -->|4a. DuckDuckGo| E((Internet))
-        E -->|5a. Results| D
-        D -->|6a. Formatted Web Context| B
-        
-        C -.->|3b. PubMed Query| F[MCP Server: PubMed Search]
-        F -->|4b. Entrez API| G((NCBI PubMed))
-        G -->|5b. Results| F
-        F -->|6b. Formatted PubMed Context| B
-
-        C -.->|3c. Semantic Query| H[Vector Store (FAISS)]
-        H -->|6c. Formatted PDF Context| B
-        
-        B -->|7a. Web Context + Question| I{LLM Synthesizer}
-        B -->|7b. PubMed Context + Question| I
-        B -->|7c. PDF Context + Question| I
-
-        subgraph "Radiology Analysis"
-            B -->|Image + Prompt| J{Multimodal LLM}
-            H -->|PDF Context| J
-            J -->|Synthesized Analysis| B
-        end
-    end
-
-    subgraph "External Services & APIs"
-        I --> K[Google Gemini API<br>(gemini-1.5-flash)]
-        J --> K
-    end
-
-    B -->|8. Final Synthesized Output| A
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#ccf,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
-    style D fill:#lightgreen,stroke:#333,stroke-width:2px
-    style F fill:#lightgreen,stroke:#333,stroke-width:2px
-    style H fill:#lightyellow,stroke:#333,stroke-width:2px
-    style I fill:#lightblue,stroke:#333,stroke-width:2px
-    style J fill:#lightblue,stroke:#333,stroke-width:2px
-    style K fill:#FFC107,stroke:#333,stroke-width:1px
+![Untitled design](https://github.com/user-attachments/assets/609768ea-0530-4756-985c-71a150dc8f6a)
 
 
 Explanation of the Workflow:
