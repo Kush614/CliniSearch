@@ -1,7 +1,10 @@
-Generated markdown
+
 # CliniSearch: A Multimodal Medical Research & Radiology Assistant
 
 **CliniSearch** is an advanced, multimodal AI agent developed for the UCB Hackathon. It is designed to be a powerful assistant for medical professionals, particularly radiologists, by streamlining clinical research and providing AI-powered preliminary image analysis. The agent integrates multiple state-of-the-art technologies, including premium LLMs (Google Gemini), a multi-source RAG pipeline, and a user-friendly web interface built with Streamlit.
+
+# Video Demo:
+[![CliniSearch AI Agent Demo](https://youtu.be/Q3a4GuCqoKQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=Q3a4GuCqoKQ"CliniSearch AI Agent Demo")
 
 ---
 
