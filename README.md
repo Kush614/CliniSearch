@@ -56,12 +56,16 @@ CliniSearch demonstrates a strong command of modern AI engineering principles an
 ![Untitled design](https://github.com/user-attachments/assets/53db4cce-1588-4e42-9df7-bcb718204ead)
 
 The diagram above provides a comprehensive overview of the Spectra AI technology stack and the flow of data from user interaction to final output. The system is divided into four logical domains: Frontend, Backend/Orchestrator, Local Tools & Services, and External APIs.
+
 1. Frontend (UI - Blue)
 <i class='fab fa-streamlit'></i> Streamlit App (app.py): This is the user's single point of interaction. It's responsible for rendering the web interface, managing user inputs (text queries, file uploads), and displaying the final, formatted results.
-2. Application Backend / Orchestrator (Purple)
+
+3. Application Backend / Orchestrator (Purple)
 RAG & Multimodal Logic: This is the "brain" of the application, also residing within app.py. It orchestrates the entire workflow, deciding which tools to call, when to process data, which LLMs to query for synthesis, and how to format the final response.
-3. Local Tools & Services (Green)
+
+5. Local Tools & Services (Green)
 This domain contains components that run locally alongside the main application.
+
 <i class='fas fa-server'></i> MCP Tool Servers (FastAPI):
 These are two independent, lightweight servers built with FastAPI. They act as modular tools that the main orchestrator can call.
 Web Search Server: Receives a query, uses the duckduckgo-search library to get results from the internet, and returns them in a standard JSON format.
@@ -70,7 +74,7 @@ PubMed Server: Receives a query, uses the BioPython library to interact with the
 (Step 3a) PDF Parser (PyMuPDF): When a user uploads a PDF, this library extracts the raw text.
 (Step 3b) Embedding Model (Sentence Transformer): This is a crucial local LLM. It takes the text chunks from the PDF and converts them into numerical vector embeddings. We use a lightweight but effective model like all-MiniLM-L6-v2.
 (Step 3c) Vector Store (FAISS CPU): The generated embeddings are stored in this in-memory vector database. FAISS (Facebook AI Similarity Search) allows for incredibly fast and efficient semantic searches, simulating the functionality of a production service like GCP Vertex AI Vector Search.
-4. External APIs & Data Sources (Orange)
+7. External APIs & Data Sources (Orange)
 This domain represents all the third-party services the system relies on.
 <i class='fab fa-google'></i> Google Gemini API: The primary engine for high-level reasoning. It's used for:
 Text Synthesis: Generating the final, human-readable answers based on the context provided by the RAG pipeline.
