@@ -76,18 +76,23 @@ PubMed Server: Receives a query, uses the BioPython library to interact with the
 (Step 3c) Vector Store (FAISS CPU): The generated embeddings are stored in this in-memory vector database. FAISS (Facebook AI Similarity Search) allows for incredibly fast and efficient semantic searches, simulating the functionality of a production service like GCP Vertex AI Vector Search.
 7. External APIs & Data Sources (Orange)
 This domain represents all the third-party services the system relies on.
+
 <i class='fab fa-google'></i> Google Gemini API: The primary engine for high-level reasoning. It's used for:
 Text Synthesis: Generating the final, human-readable answers based on the context provided by the RAG pipeline.
 Vision Analysis: Analyzing the content of uploaded medical images.
+
 <i class='fas fa-brain'></i> Anthropic Claude API (Optional): The system is built to be model-agnostic. The Claude API can be used as an alternative to Gemini for text synthesis, allowing for flexibility and comparison.
+
 <i class='fab fa-duckduckgo'></i> DuckDuckGo Search: The data source for real-time web search.
 <i class='fas fa-book-medical'></i> NCBI PubMed: The data source for peer-reviewed medical literature.
+
 A Typical Workflow (Tracing the Arrows)
 A User asks a question or uploads an image and a PDF to the Streamlit Frontend.
 The frontend triggers the RAG & Multimodal Logic in the backend.
 If a PDF was uploaded, it is parsed by PyMuPDF, its text is converted to embeddings by the Sentence Transformer model, and these embeddings are stored in the FAISS Vector Store.
 The orchestrator sends the user's query to the MCP Servers for Web and PubMed results and simultaneously performs a semantic search on the FAISS Vector Store.
 The MCP servers in turn query their respective data sources, DuckDuckGo and PubMed.
+
 The orchestrator gathers all the retrieved context (from web, PubMed, and local PDFs) and constructs a detailed prompt. This prompt, along with the user's original question (and an image, if applicable), is sent via API call to a powerful external LLM like Google Gemini.
 The orchestrator receives the synthesized answer from the LLM.
 The answer is formatted neatly (with sources and links) and displayed back to the User in the Streamlit interface.
