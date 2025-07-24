@@ -6,6 +6,12 @@
 # Video Demo:
 [![CliniSearch AI Agent Demo](https://youtu.be/Q3a4GuCqoKQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=Q3a4GuCqoKQ"CliniSearch AI Agent Demo")
 
+<img width="1765" height="725" alt="image" src="https://github.com/user-attachments/assets/2d9511fa-888a-4d6b-8d3b-3c663a9496f1" />
+<img width="1690" height="740" alt="image" src="https://github.com/user-attachments/assets/aee9000e-82f1-49e6-aaaa-83f7194f469e" />
+<img width="1137" height="715" alt="image" src="https://github.com/user-attachments/assets/c39e2787-424a-4fff-ba38-baf1ecd7fca6" />
+<img width="1167" height="517" alt="image" src="https://github.com/user-attachments/assets/7b1fbb5e-ed3f-425e-aab6-2ab8563edcfc" />
+<img width="1700" height="732" alt="image" src="https://github.com/user-attachments/assets/08d28543-697e-4fd0-b163-c91f406b1115" />
+
 ---
 
 ## 🚀 Application & Real-World Benefit
@@ -101,109 +107,97 @@ For Radiology Analysis: The Multimodal LLM (Gemini) receives the uploaded image,
 
 Final Output: The synthesized text answers and image analyses are formatted and displayed in the Streamlit UI, with sources clearly cited.
 
-⚙️ Setup & Running the System
+Sure! Below is a clean, copy-paste-ready script you can include in your `README.md` on GitHub under a **"⚙️ Setup & Running the System"** section. It uses markdown formatting with code blocks and provides clear step-by-step instructions.
 
-1. Prerequisites:
+---
 
-Python 3.9+
+## ⚙️ Setup & Running the System
 
-Git
+### 🛠️ Prerequisites
 
-2. Clone the Repository:
+* Python 3.9+
+* Git
 
-Generated bash
+### 📦 Clone the Repository
+
+```bash
 git clone <your-repo-url>
 cd <your-project-directory>
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
-3. Set up Virtual Environment:
+### 🧪 Set up Virtual Environment
 
-Generated bash
-# Create the environment
+#### Create the environment
+
+```bash
 python -m venv venv
+```
 
-# Activate it
-On macOS/Linux:
+#### Activate the environment
+
+**On macOS/Linux:**
+
+```bash
 source venv/bin/activate
-On Windows:
+```
+
+**On Windows:**
+
+```bash
 venv\Scripts\activate
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
-4. Install Dependencies:
+### 📥 Install Dependencies
 
-Generated bash
+```bash
 pip install -r requirements.txt
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
-5. Configure API Keys:
+### 🔐 Configure API Keys
 
-Rename .env.example to .env.
+1. Rename the environment example file:
 
-Open .env and add your GOOGLE_API_KEY and your email for NCBI_EMAIL.
+```bash
+mv .env.example .env
+```
 
-6. Run the MCP Servers:
+2. Open `.env` and set the following:
 
-You need two separate terminal windows for these background services. Ensure your virtual environment is active in each.
+   * `GOOGLE_API_KEY=<your_google_api_key>`
+   * `NCBI_EMAIL=<your_email_for_ncbi_access>`
 
-Terminal 1 (Web Search Server):
+### 🚀 Run the MCP Servers
 
-Generated bash
+> Open **two separate terminals**, and ensure the virtual environment is activated in both.
+
+#### Terminal 1 – Web Search Server
+
+```bash
 python -m uvicorn mcp_servers.web_search_server:app --reload --port 8001
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
-Terminal 2 (PubMed Server):
+#### Terminal 2 – PubMed Server
 
-Generated bash
+```bash
 python -m uvicorn mcp_servers.pubmed_search_server:app --reload --port 8002
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
-7. Run the Main Web Application:
+### 🌐 Run the Main Web Application
 
-In a third terminal (with the virtual environment active), run the Streamlit app:
+> In a **third terminal**, with the virtual environment activated:
 
-Generated bash
+```bash
 streamlit run app.py
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+```
 
-Your browser should open with the Spectra AI application running.
+Your browser will automatically open with the **Spectra AI** application running.
 
-⚖️ Ethical Considerations
+---
 
-This tool is a powerful assistant but is not a substitute for professional medical judgment.
+## ⚖️ Ethical Considerations
 
-For Educational & Research Use Only: All outputs, especially image analyses, must be verified by a qualified medical professional.
+Spectra AI is a powerful assistant, but **not a substitute for professional medical judgment**. All analyses and outputs are intended for **informational and research purposes only** and should not be used to make final clinical decisions. Always consult and verify results with a qualified medical professional.
 
-Data Privacy: Users must ensure any uploaded documents or images are properly anonymized and comply with HIPAA and other privacy regulations.
+---
 
-AI Bias: The underlying LLMs can have biases. Results should be critically evaluated.
-
+Let me know if you want to include screenshots or a demo video link section too.
